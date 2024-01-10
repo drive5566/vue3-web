@@ -1,0 +1,91 @@
+<script setup>
+import { ref } from 'vue';
+import Title from '@/components/Title/Title.vue'
+
+const item = ref([
+    {
+        img: '/public/img/MAIN-SABULL HB SHAD-28g - 複製.jpg',
+        productName: 'JACKALL SABULL HB SHAD 28g [路亞硬餌] [灘拋用]',
+        sold: 50,
+        price: 470,
+        id: 1
+    },
+    {
+        img: '/public/img/MAIN-JETTROW-35g - 複製.jpg',
+        productName: 'JACKALL JETTROW 35g [路亞助投器套組] [類水球釣組]',
+        sold: 6540,
+        price: 500,
+        id: 2
+    },
+    {
+        img: '/public/img/MAIN-JETTROW-45g - 複製.jpg',
+        productName: 'JACKALL JETTROW 45g [路亞助投器套組] [類水球釣組]',
+        sold: 230,
+        price: 550,
+        id: 3
+    },
+    {
+        img: '/public/img/MAIN-JETTROW BUDDY - 複製.jpg',
+        productName: 'JACKALL JETTROW BUDDY [類弓角] [阿兵哥釣組]',
+        sold: 10,
+        price: 170,
+        id: 4
+    }
+])
+
+const title = '最新商品 NEW'
+
+</script>
+
+<template>
+
+    <div class="new-thing-container">
+
+        <Title :title="title" />
+
+        <div class="new-think-card" v-for="items of item" :key="items.id">
+            <img :src="items.img" alt="">
+            <div class="new-think-content">
+                <h3>{{ items.productName }}</h3>
+                <p class="sold">已售出{{ items.sold }}</p>
+                <p class="price">NT.{{ items.price }}</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<style lang="scss" scoped>
+.new-thing-container {
+    background-color: rgba(216, 216, 216, 0.2);
+}
+
+
+
+.new-think-card {
+    margin: 0 auto;
+    max-width: 1270px;
+    display: flex;
+    justify-content: start;
+    padding: 30px;
+    border-bottom: 1px solid hsl(0, 0%, 0%,.2);
+
+    h3 {
+        font-size: 26px;
+    }
+
+    .sold {
+        margin: 10px 0;
+    }
+
+    .price {
+        color: red;
+        font-size: 18px;
+    }
+
+    img {
+        width: 20%;
+        border: 1px solid rgb(0, 0, 0, .2);
+        margin-right: 50px;
+    }
+}
+</style>
