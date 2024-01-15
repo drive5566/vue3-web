@@ -70,7 +70,12 @@ export const createMyRouter = function(){
 
                 ]
                 
-            }
+            },
+            {
+                path:'/brandZone',
+                name:'brandZone',
+                component: () => import('@/pages/brandZone/brandZone.vue')
+            },
     
         ]
     })

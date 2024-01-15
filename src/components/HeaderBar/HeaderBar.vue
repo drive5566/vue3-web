@@ -26,10 +26,8 @@ import {RouterLink} from 'vue-router'
                     </RouterLink>
                     <RouterLink to="/products"><li>商品一覽</li></RouterLink>
                     <RouterLink to="/promotion/Promotions"><li>促銷活動</li></RouterLink>
-                    <li>品牌專區</li>
-                    <li>活動資訊</li>
+                    <RouterLink to="/brandZone"><li>品牌專區</li></RouterLink>
                     <li>影片專區</li>
-                    <li>釣魚小教室</li>
                     <li>釣場介紹</li>
                 </ul>
             </div>

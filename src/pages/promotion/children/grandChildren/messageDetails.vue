@@ -4,6 +4,7 @@ import { useRoute  } from 'vue-router'
 
 const props = defineProps(['promotionItems'])
 
+
 const route = useRoute()
 const messageId = route.query.id
 const itemDetails = props.promotionItems[messageId]
@@ -11,7 +12,10 @@ const itemDetails = props.promotionItems[messageId]
 const formattedText = computed(() =>{
     return itemDetails.text.replace(/,/g, '<br>');
 })
+
+
 </script>
+
 
 <template>
 <div class="wrap">
@@ -22,8 +26,13 @@ const formattedText = computed(() =>{
     </div>
     <img :src="itemDetails.img" alt="">
     <p class="text" v-html="formattedText"></p>
+
+
 </div>
 </template>
+
+
+
 <style lang="scss" scoped>
 .wrap{
     max-width: 1270px;
@@ -64,5 +73,6 @@ const formattedText = computed(() =>{
         line-height: 30px;
     }
 }
+
 
 </style>

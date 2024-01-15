@@ -1,5 +1,7 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted  } from 'vue'
+import { useRoute  } from 'vue-router'
+
 const item = ref([
     {
         brand: 'JACKALL',
@@ -99,6 +101,8 @@ const item = ref([
     },
 ])
 
+
+
 let filterItem = ref([...item.value])
 
 const uniqueBrands = computed(() => {
@@ -125,7 +129,19 @@ const tabChange = (button) => {
     console.log(tabFlag.value);
 }
 
+const route = useRoute()
+const brandId = route.query.id
+console.log(brandId);
+
+
+
+onMounted(() => {
+    brandId !== undefined?SelectBrand(brandId):''
+})
+
+
 </script>
+
 <template>
     <div class="wrap">
         <div class="left-nav-container">

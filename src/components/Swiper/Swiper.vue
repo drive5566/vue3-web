@@ -21,13 +21,14 @@ const props = defineProps(['item','slidesPerView','clickable','navigation'])
     <div class="swiperbox">
     <swiper
       :slidesPerView="slidesPerView"
-      :spaceBetween="30"
+
       :loop="true"
       :centeredSlides="true"
       :pagination=" clickable "
       :autoplay="{ delay: 3000, disableOnInteraction: false}"
       :modules="modules"
       :navigation="navigation"
+      
     >
 
       <swiper-slide v-for="items in item" :key="items.id"> <img class="swiper-img" :src=" items.img " alt=""> </swiper-slide> -->
@@ -42,7 +43,7 @@ const props = defineProps(['item','slidesPerView','clickable','navigation'])
 
 
 .swiperbox{
-    margin: 0 auto;
+  margin: 0 auto;
     margin-bottom: 10px;
     max-width: 1270px;
     .swiper-img{
