@@ -76,7 +76,11 @@ export const createMyRouter = function(){
                 name:'brandZone',
                 component: () => import('@/pages/brandZone/brandZone.vue')
             },
-    
+            {
+                path:'/video',
+                name:'video',
+                component: () => import('@/pages/video/video.vue')
+            },
         ]
     })
     // 阻擋

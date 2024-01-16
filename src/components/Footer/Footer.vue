@@ -5,7 +5,7 @@
 <template>
     <div class="footer-container">
         <div class="footer-list">
-            <img src="" alt="">
+            <img src="/public/img/qr.ioi.tw.png" alt="">
             <ul>
                 <li>公司簡介</li>
                 <li>人力招募</li>
@@ -45,11 +45,18 @@
         max-width: 1024px;
         display: flex;
         justify-content: space-between;
+        img{
+            width: 100px;
+        }
 
     }
 
     li {
         margin: 10px;
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
 
     }
 

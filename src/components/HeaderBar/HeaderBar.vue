@@ -24,11 +24,39 @@ import {RouterLink} from 'vue-router'
                                 src="/public/img/pngtree-fishing-logo-isolated-on-white-vector-illustration-with-water-color-on-image_214287.jpg"
                                 alt="又釣到了釣具"></a></li>
                     </RouterLink>
-                    <RouterLink to="/products"><li>商品一覽</li></RouterLink>
-                    <RouterLink to="/promotion/Promotions"><li>促銷活動</li></RouterLink>
-                    <RouterLink to="/brandZone"><li>品牌專區</li></RouterLink>
-                    <li>影片專區</li>
-                    <li>釣場介紹</li>
+
+                    <RouterLink to="/products">
+                        <li>
+                            <p class="subtitle">PRODUCTS</p>
+                            <p>商品一覽</p> 
+                        </li>
+                    </RouterLink>
+
+                    <RouterLink to="/promotion/Promotions">
+                        <li>
+                            <p class="subtitle">PROMOTION</p>
+                            <p>促銷活動</p>
+                        </li>
+                    </RouterLink>
+
+                    <RouterLink to="/brandZone">
+                        <li>
+                            <p class="subtitle">BRAND</p>
+                            <p>品牌專區</p>
+                        </li>
+                    </RouterLink>
+
+                    <RouterLink to="/video">
+                        <li>
+                            <p class="subtitle">VIDEO</p>
+                            <p>影片專區</p>
+                        </li>
+                    </RouterLink>
+
+                    <li>
+                        <p class="subtitle">FISHING FIELD</p>
+                        <p>釣場介紹</p>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -51,26 +79,32 @@ import {RouterLink} from 'vue-router'
 
 .Bar {
     max-width: 1270px;
-    height: 100px;
     margin: 0 auto;
     margin-bottom: 15px;
     ul {
         display: flex;
         justify-content: space-between;
+        width: 800px;
+        margin: 0 auto;
+        align-items: center;
 
         li {
-            width: 125px;
-            height: 100px;
-            padding: 5px;
-            text-align: center;
-            line-height: 100px;
-            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            font-weight: 500;
             color: rgb(2, 2, 68);
             font-size: 16px;
+            align-items: center;
+            &:hover{
+                color: rgb(15, 154, 178);
+            }
+
+            .subtitle{
+                font-size: 10px;
+            }
 
             img {
-                width: 90px;
-                height: 90px;
+                width: 100px;
             }
         }
     }
