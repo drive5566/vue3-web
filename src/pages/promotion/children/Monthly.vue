@@ -1,44 +1,46 @@
 <script setup>
 import { ref } from 'vue';
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 const promotionItem = ref(
     [
         {
-            img: '/public/img/20230414140705309.jpg',
+            img: '20230414140705309.jpg',
             title:'202304 花月訪卷',
             date:'2024.01.01',
             Classification:'月刊',
             id: '0'
         },
         {
-            img: '/public/img/20230317171237155.jpg',
+            img: '20230317171237155.jpg',
             title:'202303 Z字流 PENCIL',
             date:'2024.01.01',
             Classification:'月刊',
             id: '1'
         },
         {
-            img: '/public/img/20230210103748701.jpg',
+            img: '20230210103748701.jpg',
             title:'202302 初階管池',
             date:'2024.01.01',
             Classification:'月刊',
             id: '2'
         },
         {
-            img: '/public/img/20230110092242458.jpg',
+            img: '20230110092242458.jpg',
             title:'202301 探究 溪谷獵人',
             date:'2024.01.01',
             Classification:'月刊',
             id: '3'
         },
         {
-            img: '/public/img/20230110093759618.jpg',
+            img: '20230110093759618.jpg',
             title:'202212 冬日戀鯛',
             date:'2024.12.21',
             Classification:'月刊',
             id: '4'
         },
         {
-            img: '/public/img/20221124114718579.jpg',
+            img: '20221124114718579.jpg',
             title:'202211 冬起',
             date:'2023.15.15',
             Classification:'月刊',
@@ -53,8 +55,8 @@ const promotionItem = ref(
 <template>
     <div class="main-continer" >
         <div class="card-container" v-for="promotionItems of promotionItem" :key="promotionItems.id">
-            <a :href="promotionItems.img" target="_blank">
-                <img :src="promotionItems.img" :alt="promotionItems.title">
+            <a :href="getImagePath(promotionItems.img)" target="_blank">
+                <img :src="getImagePath(promotionItems.img)" :alt="promotionItems.title">
             </a>
             <div class="card-text">
                 <p>{{promotionItems.Classification}}</p>

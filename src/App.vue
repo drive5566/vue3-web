@@ -17,5 +17,6 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped>
 .wrap{
     margin-top: 165px;
+
 }
 </style>

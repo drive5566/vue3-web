@@ -2,10 +2,11 @@
 import {defineProps} from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue' // swiper 所需组件
 import { Autoplay, Navigation, Pagination, A11y } from 'swiper'// 分页器
-// import 'swiper/swiper-bundle.css'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 
 const modules = [Autoplay, Pagination, Navigation, A11y]
 
@@ -31,7 +32,7 @@ const props = defineProps(['item','slidesPerView','clickable','navigation'])
       
     >
 
-      <swiper-slide v-for="items in item" :key="items.id"> <img class="swiper-img" :src=" items.img " alt=""> </swiper-slide> -->
+      <swiper-slide v-for="items in item" :key="items.id"> <img class="swiper-img" :src=" getImagePath(items.img) " alt=""> </swiper-slide> -->
         
     </swiper>
   </div>

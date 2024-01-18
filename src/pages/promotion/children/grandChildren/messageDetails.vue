@@ -1,6 +1,8 @@
 <script setup>
 import { computed, ref  } from 'vue'
 import { useRoute  } from 'vue-router'
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 
 const props = defineProps(['promotionItems'])
 
@@ -24,7 +26,7 @@ const formattedText = computed(() =>{
         <p class="Classification">{{ itemDetails.Classification }}</p>
         <p class="date">{{ itemDetails.date }}</p>
     </div>
-    <img :src="itemDetails.img" alt="">
+    <img :src="getImagePath(itemDetails.img)" alt="">
     <p class="text" v-html="formattedText"></p>
 
 

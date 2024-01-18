@@ -1,11 +1,13 @@
 <script setup>
 import { computed, ref, onMounted  } from 'vue'
 import { useRoute  } from 'vue-router'
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 
 const item = ref([
     {
         brand: 'JACKALL',
-        img: '/public/img/MAIN-SABULL HB SHAD-28g - 複製.jpg',
+        img: 'MAIN-SABULL HB SHAD-28g - 複製.jpg',
         productName: 'JACKALL SABULL HB SHAD 28g [路亞硬餌] [灘拋用]',
         sold: 50,
         price: 470,
@@ -13,7 +15,7 @@ const item = ref([
     },
     {
         brand: 'JACKALL',
-        img: '/public/img/MAIN-JETTROW-35g - 複製.jpg',
+        img: 'MAIN-JETTROW-35g - 複製.jpg',
         productName: 'JACKALL JETTROW 35g [路亞助投器套組] [類水球釣組]',
         sold: 6540,
         price: 500,
@@ -21,7 +23,7 @@ const item = ref([
     },
     {
         brand: 'JACKALL',
-        img: '/public/img/MAIN-JETTROW-45g - 複製.jpg',
+        img: 'MAIN-JETTROW-45g - 複製.jpg',
         productName: 'JACKALL JETTROW 45g [路亞助投器套組] [類水球釣組]',
         sold: 230,
         price: 550,
@@ -29,7 +31,7 @@ const item = ref([
     },
     {
         brand: 'JACKALL',
-        img: '/public/img/MAIN-JETTROW BUDDY - 複製.jpg',
+        img: 'MAIN-JETTROW BUDDY - 複製.jpg',
         productName: 'JACKALL JETTROW BUDDY [類弓角] [阿兵哥釣組]',
         sold: 10,
         price: 170,
@@ -37,7 +39,7 @@ const item = ref([
     },
     {
         brand: 'HR',
-        img: '/public/img/MAIN-斬怪-SMC-564XXH - 複製.jpg',
+        img: 'MAIN-斬怪-SMC-564XXH - 複製.jpg',
         productName: 'HR SLASH MONSTER 斬怪 SMC-564XXH',
         sold: 150,
         price: 5700,
@@ -45,7 +47,7 @@ const item = ref([
     },
     {
         brand: 'SHIMANO',
-        img: '/public/img/MAIN-GL-111V-BB-X 白 - 複製.jpg',
+        img: 'MAIN-GL-111V-BB-X 白 - 複製.jpg',
         productName: 'SHIMANO GL-111V BB-X白 [五指手套]',
         sold: 74,
         price: 2300,
@@ -53,7 +55,7 @@ const item = ref([
     },
     {
         brand: 'DAIWA',
-        img: '/public/img/MAIN-送行李箱-七海刀狼 - 複製.jpg',
+        img: 'MAIN-送行李箱-七海刀狼 - 複製.jpg',
         productName: 'DAIWA 七海刀郎 0.6號-50 SMT [磯釣竿]',
         sold: 40,
         price: 23000,
@@ -61,7 +63,7 @@ const item = ref([
     },
     {
         brand: 'GAMAKATSU',
-        img: '/public/img/MAIN-GM-3721 - 複製.jpg',
+        img: 'MAIN-GM-3721 - 複製.jpg',
         productName: 'GAMAKATSU GM-3721 [夾克]',
         sold: 10,
         price: 3600,
@@ -69,7 +71,7 @@ const item = ref([
     },
     {
         brand: 'JACKALL',
-        img: '/public/img/MAIN-BIG BACKER FIT VIB-70mm - 複製.jpg',
+        img: 'MAIN-BIG BACKER FIT VIB-70mm - 複製.jpg',
         productName: 'JACKALL BIG BACKER FIT VIB 70 [小顫泳]',
         sold: 6,
         price: 280,
@@ -77,7 +79,7 @@ const item = ref([
     },
     {
         brand: 'MEGABASS',
-        img: '/public/img/MAIN-IxI FURIOUS 1.5 - 複製.jpg',
+        img: 'MAIN-IxI FURIOUS 1.5 - 複製.jpg',
         productName: 'MEGABASS IXI FURIOUS 1.5 [路亞硬餌]',
         sold: 9,
         price: 480,
@@ -85,7 +87,7 @@ const item = ref([
     },
     {
         brand: 'OSP',
-        img: '/public/img/MAIN-FLAT CAP - 複製.jpg',
+        img: 'MAIN-FLAT CAP - 複製.jpg',
         productName: 'O.S.P FLAT CAP [釣魚帽]',
         sold: 9,
         price: 1300,
@@ -93,7 +95,7 @@ const item = ref([
     },
     {
         brand: 'EVERGREEN',
-        img: '/public/img/MAIN-GRASS RIPPER-1 4oz - 複製.jpg',
+        img: 'MAIN-GRASS RIPPER-1 4oz - 複製.jpg',
         productName: 'EVERGREEN GRASS RIPPER 1/4oz',
         sold: 0,
         price: 230,
@@ -182,7 +184,7 @@ onMounted(() => {
                      'products-cozy-style': tabFlag == 'button1'}"
                      >
                 <div class="products-card" v-for="filterItems of filterItem" :key="filterItems.id">
-                    <img :src="filterItems.img" alt="">
+                    <img :src="getImagePath(filterItems.img)" alt="">
                     <div class="products-content">
                         <h3>{{ filterItems.productName }}</h3>
                         <p class="sold">已售出 {{ filterItems.sold }}</p>

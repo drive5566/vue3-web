@@ -11,25 +11,25 @@
         <ul>
             <RouterLink :to="{name:'Monthly'}" >
                 <li >
-                    <a>月刊</a>
+                    <p>月刊</p>
                 </li>
             </RouterLink>
 
             <RouterLink :to="{name:'Promotions'}">
                 <li >
-                    <a>促銷活動</a>
+                    <p>促銷活動</p>
                 </li>
             </RouterLink>
 
             <RouterLink :to="{name:'newGoods'}">
                 <li >
-                    <a>新貨到</a>
+                    <p>新貨到</p>
                 </li>
             </RouterLink>
 
             <RouterLink :to="{name:'introduce'}">
                 <li >
-                    <a>新品介紹</a>
+                    <p>新品介紹</p>
                 </li>
             </RouterLink>
 
@@ -60,6 +60,7 @@
             border: 1px solid rgb(77, 91, 130);
             padding: 5px;
             border-radius: 10px;
+
             &:hover{
                     color: #FFF;
                     background-color: rgb(77, 91, 130);
@@ -71,6 +72,7 @@
 }
 
 .router-link-exact-active{
+    z-index: 9;
     color: #FFF;
     background-color: rgb(77, 91, 130);
     border-radius: 10px;

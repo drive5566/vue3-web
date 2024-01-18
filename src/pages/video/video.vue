@@ -1,25 +1,27 @@
 <script setup>
 import Title from "@/components/Title/Title.vue";
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 
 const title = '影片專區 VIDEOS'
 
 const videoItems = [
     {
-        img:'/public/img/20230927094457928.jpg',
+        img:'20230927094457928.jpg',
         src:'https://www.youtube.com/embed/UrhRY9ZksEE?si=yvi6WyjR8uJWW1Au',
         id:0,
         date:'2023-09-27',
         title:'HR 溪谷獵人 限定版 實釣影片'
     },
     {
-        img:'/public/img/20230927095332952.jpg',
+        img:'20230927095332952.jpg',
         src:'https://www.youtube.com/embed/zI1cyQYdYtc?si=X1pqab-hzkgsEYvv',
         id:1,
         date:'2023-09-27',
         title:'2023 TOYO 新品 JIN BATSU'
     },
     {
-        img:'/public/img/20230927094819407.jpg',
+        img:'20230927094819407.jpg',
         src:'https://www.youtube.com/embed/XV7Lk8MrQu8?si=ysqbxBGmOT7hpid-',
         id:2,
         date:'2023-08-08',
@@ -27,7 +29,7 @@ const videoItems = [
 
     },
     {
-        img:'/public/img/20230927095040915.jpg',
+        img:'20230927095040915.jpg',
         src:'https://www.youtube.com/embed/jUErNS3nY7c?si=fiwE4L8wwdoZd0Dp',
         id:3,
         date:'2023-03-31',
@@ -35,7 +37,7 @@ const videoItems = [
 
     },
     {
-        img:'/public/img/20221014140849558.jpg',
+        img:'20221014140849558.jpg',
         src:'https://www.youtube.com/embed/1_MkaeDm1VY?si=wz1QyA1LJr-oNc6Y',
         id:4,
         date:'2023-20-14',
@@ -43,7 +45,7 @@ const videoItems = [
 
     },
     {
-        img:'/public/img/20220922133450574.jpg',
+        img:'20220922133450574.jpg',
         src:'https://www.youtube.com/embed/eN1l4Rd-oKE?si=3VsuYeU1D9_uDjg-',
         id:5,
         date:'2023-09-22',
@@ -61,7 +63,7 @@ const videoItems = [
         <div class="main-container" >
             <ul>
                 <li v-for="videoItem of videoItems" :key="videoItem.id">
-                    <img :src="videoItem.img" alt="">
+                    <img :src="getImagePath(videoItem.img)" alt="">
                     <h3>{{ videoItem.title }}</h3>
                     <p>{{ videoItem.date }}</p>
                 </li>

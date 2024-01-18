@@ -1,39 +1,42 @@
 <script setup>
 import { ref } from 'vue';
 import Title from '@/components/Title/Title.vue'
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 
 const item = ref([
     {
-        img: '/public/img/MAIN-SABULL HB SHAD-28g - 複製.jpg',
+        img: 'MAIN-SABULL HB SHAD-28g - 複製.jpg',
         productName: 'JACKALL SABULL HB SHAD 28g [路亞硬餌] [灘拋用]',
         sold: 50,
         price: 470,
-        id: 1
+        id: 0
     },
     {
-        img: '/public/img/MAIN-JETTROW-35g - 複製.jpg',
+        img: 'MAIN-JETTROW-35g - 複製.jpg',
         productName: 'JACKALL JETTROW 35g [路亞助投器套組] [類水球釣組]',
         sold: 6540,
         price: 500,
-        id: 2
+        id: 1
     },
     {
-        img: '/public/img/MAIN-JETTROW-45g - 複製.jpg',
+        img: 'MAIN-JETTROW-45g - 複製.jpg',
         productName: 'JACKALL JETTROW 45g [路亞助投器套組] [類水球釣組]',
         sold: 230,
         price: 550,
-        id: 3
+        id: 2
     },
     {
-        img: '/public/img/MAIN-JETTROW BUDDY - 複製.jpg',
+        img: 'MAIN-JETTROW BUDDY - 複製.jpg',
         productName: 'JACKALL JETTROW BUDDY [類弓角] [阿兵哥釣組]',
         sold: 10,
         price: 170,
-        id: 4
+        id: 3
     }
 ])
 
 const title = '最新商品 NEW'
+
 
 </script>
 
@@ -44,7 +47,7 @@ const title = '最新商品 NEW'
         <Title :title="title" />
 
         <div class="new-think-card" v-for="items of item" :key="items.id">
-            <img :src="items.img" alt="">
+            <img :src="getImagePath(items.img)" alt="">
             <div class="new-think-content">
                 <h3>{{ items.productName }}</h3>
                 <p class="sold">已售出{{ items.sold }}</p>

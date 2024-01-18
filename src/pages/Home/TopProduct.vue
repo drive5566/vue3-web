@@ -10,24 +10,24 @@ const clickable = ref(false)
 
 const item = ref([
     {
-        img: '/public/img/MAIN-VIB 46S-HS - 複製.jpg',
+        img: 'MAIN-VIB 46S-HS - 複製.jpg',
+        id: 0
+    },
+    {
+        img: '750-SPOON 50g - 複製.jpg',
         id: 1
     },
     {
-        img: '/public/img/750-SPOON 50g - 複製.jpg',
+        img: '750-SPOON 100g - 複製.jpg',
         id: 2
     },
     {
-        img: '/public/img/750-SPOON 100g - 複製.jpg',
+        img: '750-SPOON 70g - 複製.jpg',
         id: 3
     },
     {
-        img: '/public/img/750-SPOON 70g - 複製.jpg',
+        img: '750-口太速攻 - 複製.jpg',
         id: 4
-    },
-    {
-        img: '/public/img/750-口太速攻 - 複製.jpg',
-        id: 5
     },
 ]
 )

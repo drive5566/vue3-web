@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from 'vue';
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 const promotionItems = ref(
     [
         {
-            img: '/public/img/20240103093546115.jpg',
+            img: '20240103093546115.jpg',
             title:'1.1 ~ 1.17 限量滿額折價券',
             date:'2024.01.01',
             Classification:'促銷活動',
@@ -11,7 +13,7 @@ const promotionItems = ref(
             text:'1月,限量滿額折價券,請先登入會員,才可領取折價券'
         },
         {
-            img: '/public/img/20240103092445839.jpg',
+            img: '20240103092445839.jpg',
             title:'2024 新年快樂！凡會員一月首購(不限金額)輸入vip99即送好禮 HR 伸縮扣一個！',
             date:'2024.01.01',
             Classification:'促銷活動',
@@ -23,7 +25,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20240103092926353.jpg',
+            img: '20240103092926353.jpg',
             title:'2024_1月，消費單筆滿額贈好禮，白金海豚以上會員另有加碼贈！',
             date:'2024.01.01',
             Classification:'促銷活動',
@@ -32,7 +34,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20240102103040678.jpg',
+            img: '20240102103040678.jpg',
             title:'2024 一月 單筆結帳滿額贈百元折價券',
             date:'2024.01.01',
             Classification:'促銷活動',
@@ -41,7 +43,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20231221134325112.jpg',
+            img: '20231221134325112.jpg',
             title:'進口名牌釣具特價中 ~ 優惠7折起，數量有限售完為止！',
             date:'2024.12.21',
             Classification:'促銷活動',
@@ -50,7 +52,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20231215103929637.jpg',
+            img: '20231215103929637.jpg',
             title:'HR 年終慶 品牌釣竿 4折起！',
             date:'2023.15.15',
             Classification:'促銷活動',
@@ -71,7 +73,7 @@ const promotionItems = ref(
         <div class="card-container" v-for="promotionItem of promotionItems" :key="promotionItem.id">
 
             <RouterLink :to="{ name: 'PromotionsMessageDetails',query: { id: promotionItem.id }}">
-            <img :src="promotionItem.img" :alt="promotionItem.title">
+            <img :src="getImagePath(promotionItem.img)" :alt="promotionItem.title">
             </RouterLink>
 
 

@@ -9,16 +9,16 @@ import TopProduct from '@/pages/Home/TopProduct.vue'
 const item = ref(
     [
         {
-            img: '/public/img/20231201173916097.jpg',
-            id: '1'
+            img: '/20231201173916097.jpg',
+            id: 0
         },
         {
-            img: '/public/img/20231201174046412.jpg',
-            id: '2'
+            img: '/20231201174046412.jpg',
+            id: 1
         },
         {
-            img: '/public/img/20231201174313095.jpg',
-            id: '3'
+            img: '/20231201174313095.jpg',
+            id: 2
         },
     ]
 )

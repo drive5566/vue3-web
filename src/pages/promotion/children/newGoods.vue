@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from 'vue';
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 const promotionItems = ref(
     [
         {
-            img: '/public/img/20230626150723520.jpg',
+            img: '20230626150723520.jpg',
             title:'𝙉𝙀𝙒 𝘿𝘼𝙄𝙒𝘼 - 𝘕𝘌𝘖𝘚𝘛𝘈𝘎𝘌 𝘋𝘎',
             date:'2023.06.26',
             Classification:'新貨到',
@@ -11,7 +13,7 @@ const promotionItems = ref(
             text:'𝘿𝘼𝙄𝙒𝘼 - 𝘕𝘌𝘖𝘚𝘛𝘈𝘎𝘌 𝘋𝘎,,電動鐵板釣法 ▸▸ 專用釣竿 ⚓️,推薦安裝於 DAIWA 300型以下電動捲線器,G300J 最適合安裝使用'
         },
         {
-            img: '/public/img/20230519144159453.jpg',
+            img: '20230519144159453.jpg',
             title:'𝙉𝙀𝙒 𝙈𝙀𝙂𝘼𝘽𝘼𝙎𝙎 - 𝘖𝘕𝘐𝘔𝘈𝘙𝘜',
             date:'2023.05.19',
             Classification:'新貨到',
@@ -19,7 +21,7 @@ const promotionItems = ref(
             text:'「步行者」演員必須上「殭屍學校」,「泳者」不必學習「殭屍泳姿」'
         },
         {
-            img: '/public/img/20240103092926353.jpg',
+            img: '20240103092926353.jpg',
             title:'𝙉𝙀𝙒 DAIWA 防曬部品合集',
             date:'2023.05.18',
             Classification:'新貨到',
@@ -27,7 +29,7 @@ const promotionItems = ref(
             text:''
         },
         {
-            img: '/public/img/20230323142440995.jpg',
+            img: '20230323142440995.jpg',
             title:'𝙉𝙀𝙒 𝑲𝑨𝑻𝑺𝑼𝑰𝑪𝑯𝑰',
             date:'2024.01.01',
             Classification:'新貨到',
@@ -35,7 +37,7 @@ const promotionItems = ref(
             text:'𝑲𝑨𝑻𝑺𝑼𝑰𝑪𝑯𝑰 𝘒-1 デカグレ,專攻大型黑毛魚種'
         },
         {
-            img: '/public/img/20230322143059857.jpg',
+            img: '20230322143059857.jpg',
             title:'𝙃𝙊𝙏 磯鬥荒礁 [ 實戰磯釣鞋款 ] ',
             date:'2024.12.21',
             Classification:'新貨到',
@@ -44,7 +46,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20230317110605173.jpg',
+            img: '20230317110605173.jpg',
             title:'𝙉𝙀𝙒 HR GB-22101 [低筒毛氈防滑釘鞋]',
             date:'2023.15.15',
             Classification:'新貨到',
@@ -65,7 +67,7 @@ const promotionItems = ref(
         <div class="card-container" v-for="promotionItem of promotionItems" :key="promotionItem.id">
 
             <RouterLink :to="{ name: 'newGoodsMessageDetails',query: { id: promotionItem.id }}">
-                <img :src="promotionItem.img" :alt="promotionItem.title">
+                <img :src="getImagePath(promotionItem.img)" :alt="promotionItem.title">
             </RouterLink>
 
             <div class="card-text">

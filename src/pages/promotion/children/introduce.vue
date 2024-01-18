@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from 'vue';
+import { getImagePath } from "@/Mixins/getImagePath.js";
+
 const promotionItems = ref(
     [
         {
-            img: '/public/img/20221215104518565.jpg',
+            img: '20221215104518565.jpg',
             title:'HR HTT-2701 輕量摺疊桌',
             date:'2024.01.01',
             Classification:'新品介紹',
@@ -11,7 +13,7 @@ const promotionItems = ref(
             text:'HEARTY RISE HR HTT-2701 輕量摺疊桌,,桌面尺寸：60 x 40 cm,桌面高度：39 cm,展開尺寸：60 x 40 x 39 cm,收納尺寸：42 x 12 x 10 cm (收到收納袋內),重量：760 g,承重：約 30 kg,顏色：黑色,材質：桌面、置物籃 - 高密度尼龍布料搭配尼龍網、腳架 - 鋁管7075航太鋁合金'  
         },
         {
-            img: '/public/img/20221215103314901.jpg',
+            img: '20221215103314901.jpg',
             title:'HR HR-9004 冰絲涼感抗UV 防曬外套',
             date:'2024.01.01',
             Classification:'新品介紹',
@@ -20,7 +22,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20221215103708064.jpg',
+            img: '20221215103708064.jpg',
             title:'HR VALLEY HUNTER 溪谷獵人 SPOON',
             date:'2024.01.01',
             Classification:'新品介紹',
@@ -29,7 +31,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20221215101949385.jpg',
+            img: '20221215101949385.jpg',
             title:'FEV SQUIDER 透抽人 手持透抽竿',
             date:'2024.01.01',
             Classification:'新品介紹',
@@ -38,7 +40,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20221215100616355.jpg',
+            img: '20221215100616355.jpg',
             title:'HR 扣環式 / 別針式 伸縮扣',
             date:'2024.12.21',
             Classification:'新品介紹',
@@ -47,7 +49,7 @@ const promotionItems = ref(
 
         },
         {
-            img: '/public/img/20221215095142670.jpg',
+            img: '20221215095142670.jpg',
             title:'HR PS-2701 彩鈦 PE線剪刀',
             date:'2023.15.15',
             Classification:'新品介紹',
@@ -68,7 +70,7 @@ const promotionItems = ref(
         <div class="card-container" v-for="promotionItem of promotionItems" :key="promotionItem.id">
 
             <RouterLink :to="{name:'introduceMessageDetails',query: { id: promotionItem.id }}">
-                <img :src="promotionItem.img" :alt="promotionItem.title">
+                <img :src="getImagePath(promotionItem.img)" :alt="promotionItem.title">
             </RouterLink>
 
             <div class="card-text">

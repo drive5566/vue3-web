@@ -5,6 +5,10 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  vue:{
+    scriptSetup: true,
+  },
+  base:'./',
   plugins: [
     vue(),
   ],
@@ -14,3 +18,4 @@ export default defineConfig({
     }
   }
 })
+
