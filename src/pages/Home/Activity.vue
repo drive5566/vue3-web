@@ -6,6 +6,7 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import Title from '@/components/Title/Title.vue'
+import { getImagePath } from "@/Mixins/getImagePath.js";
 
 const modules = [Autoplay, Pagination, Navigation, A11y]
 
@@ -13,29 +14,31 @@ const modules = [Autoplay, Pagination, Navigation, A11y]
 const item = ref(
 [
     {
-        src:'/public/img/20231101091930685.jpg',
+        img:'20231101091930685.jpg',
         time:'2023-12-12',
+        id:'0'
+    },
+    {
+        img:'20231109101150960.jpg',
+        time:'2023-12-30',
         id:'1'
     },
     {
-        src:'/public/img/20231109101150960.jpg',
+        img:'20231110103843589.jpg',
         time:'2023-12-30',
         id:'2'
     },
     {
-        src:'/public/img/20231110103843589.jpg',
-        time:'2023-12-30',
-        id:'3'
-    },
-    {
-        src:'/public/img/20231127094138952.jpg',
+        img:'20231127094138952.jpg',
         time:'2023-12-26',
-        id:'4'
+        id:'3'
     }
 ]
 )
 
 const title = '活動資訊 Activity'
+
+
 </script>
 
 <template>
@@ -55,7 +58,7 @@ const title = '活動資訊 Activity'
     >
 
       <swiper-slide v-for="items of item" :key="items.id"> 
-        <img :src=" items.src " alt=""> 
+        <img :src=" getImagePath(items.img) " alt=""> 
         <div class="activity-content">
             <h3 class="activity-title">促銷活動</h3>
             <p class="activity-time">{{ items.time }}</p>
