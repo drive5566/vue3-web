@@ -11,27 +11,89 @@ const title = '釣法 FISHING METHOD'
 
 
         <div class="fishway-container">
+            
             <ul>
-                <li>海水路亞<img src="/public/img/06.jpg" alt="海水路亞"></li>
-                <li>淡水路亞<img src="/public/img/00.jpg" alt="海水路亞"></li>
-                <li>磯釣<img src="/public/img/02.jpg" alt="海水路亞"></li>
-                <li>船釣路亞<img src="/public/img/01.jpg" alt="海水路亞"></li>
+                <li>
+                    <span>海水路亞</span> 
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/06.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>淡水路亞</span> 
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/00.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>磯釣</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/02.jpg" alt="海水路亞">
+                    </RouterLink>
+
+                </li>
+                <li>
+                    <span>船釣路亞</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/01.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
             </ul>
         </div>
         <div class="fishway-container">
             <ul>
-                <li>船釣正餌<img src="/public/img/12.jpg" alt="海水路亞"></li>
-                <li>遠投<img src="/public/img/04.jpg" alt="海水路亞"></li>
-                <li>池溪<img src="/public/img/05.jpg" alt="海水路亞"></li>
-                <li>蝦<img src="/public/img/07.jpg" alt="海水路亞"></li>
+                <li>
+                    <span>船釣正餌</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/12.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>遠投</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/04.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>池溪</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/05.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>蝦</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/07.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
             </ul>
         </div>
         <div class="fishway-container">
             <ul>
-                <li>穿著品<img src="/public/img/08.jpg" alt="海水路亞"></li>
-                <li>綜合品<img src="/public/img/09.jpg" alt="海水路亞"></li>
-                <li>露營旅行<img src="/public/img/10.jpg" alt="海水路亞"></li>
-                <li>特價出清<img src="/public/img/11.jpg" alt="海水路亞"></li>
+                <li>
+                    <span>穿著品</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/08.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>綜合品</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/09.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>露營旅行</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/10.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
+                <li>
+                    <span>特價出清</span>
+                    <RouterLink :to="{name:'products'}">
+                        <img src="/public/img/11.jpg" alt="海水路亞">
+                    </RouterLink>
+                </li>
             </ul>
         </div>
     </div>

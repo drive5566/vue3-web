@@ -39,6 +39,7 @@
     color: #fff;
     font-size: 14px;
     padding: 20px 0;
+    margin-top: 10%;
 
     .footer-list {
         margin: 0 auto;

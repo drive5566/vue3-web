@@ -1,7 +1,8 @@
 <script setup>
-import { computed, ref, onMounted  } from 'vue'
-import { useRoute  } from 'vue-router'
+import { computed, ref, onMounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { getImagePath } from "@/Mixins/getImagePath.js";
+import productsDetails from '@/pages/products/productsDetails.vue'
 
 
 const item = ref([
@@ -11,7 +12,7 @@ const item = ref([
         productName: 'JACKALL SABULL HB SHAD 28g [路亞硬餌] [灘拋用]',
         sold: 50,
         price: 470,
-        id: 1
+        id: 0
     },
     {
         brand: 'JACKALL',
@@ -19,7 +20,7 @@ const item = ref([
         productName: 'JACKALL JETTROW 35g [路亞助投器套組] [類水球釣組]',
         sold: 6540,
         price: 500,
-        id: 2
+        id: 1
     },
     {
         brand: 'JACKALL',
@@ -27,7 +28,7 @@ const item = ref([
         productName: 'JACKALL JETTROW 45g [路亞助投器套組] [類水球釣組]',
         sold: 230,
         price: 550,
-        id: 3
+        id: 2
     },
     {
         brand: 'JACKALL',
@@ -35,7 +36,7 @@ const item = ref([
         productName: 'JACKALL JETTROW BUDDY [類弓角] [阿兵哥釣組]',
         sold: 10,
         price: 170,
-        id: 4
+        id: 3
     },
     {
         brand: 'HR',
@@ -43,7 +44,7 @@ const item = ref([
         productName: 'HR SLASH MONSTER 斬怪 SMC-564XXH',
         sold: 150,
         price: 5700,
-        id: 5
+        id: 4
     },
     {
         brand: 'SHIMANO',
@@ -51,7 +52,7 @@ const item = ref([
         productName: 'SHIMANO GL-111V BB-X白 [五指手套]',
         sold: 74,
         price: 2300,
-        id: 7
+        id: 5
     },
     {
         brand: 'DAIWA',
@@ -59,7 +60,7 @@ const item = ref([
         productName: 'DAIWA 七海刀郎 0.6號-50 SMT [磯釣竿]',
         sold: 40,
         price: 23000,
-        id: 8
+        id: 6
     },
     {
         brand: 'GAMAKATSU',
@@ -67,7 +68,7 @@ const item = ref([
         productName: 'GAMAKATSU GM-3721 [夾克]',
         sold: 10,
         price: 3600,
-        id: 9
+        id: 7
     },
     {
         brand: 'JACKALL',
@@ -75,7 +76,7 @@ const item = ref([
         productName: 'JACKALL BIG BACKER FIT VIB 70 [小顫泳]',
         sold: 6,
         price: 280,
-        id: 10
+        id: 8
     },
     {
         brand: 'MEGABASS',
@@ -83,7 +84,7 @@ const item = ref([
         productName: 'MEGABASS IXI FURIOUS 1.5 [路亞硬餌]',
         sold: 9,
         price: 480,
-        id: 11
+        id: 9
     },
     {
         brand: 'OSP',
@@ -91,7 +92,7 @@ const item = ref([
         productName: 'O.S.P FLAT CAP [釣魚帽]',
         sold: 9,
         price: 1300,
-        id: 12
+        id: 10
     },
     {
         brand: 'EVERGREEN',
@@ -99,7 +100,7 @@ const item = ref([
         productName: 'EVERGREEN GRASS RIPPER 1/4oz',
         sold: 0,
         price: 230,
-        id: 13
+        id: 11
     },
 ])
 
@@ -133,12 +134,11 @@ const tabChange = (button) => {
 
 const route = useRoute()
 const brandId = route.query.id
-console.log(brandId);
 
 
 
 onMounted(() => {
-    brandId !== undefined?SelectBrand(brandId):''
+    brandId !== undefined ? SelectBrand(brandId) : ''
 })
 
 
@@ -148,50 +148,59 @@ onMounted(() => {
     <div class="wrap">
         <div class="left-nav-container">
             <ul>
-                <li v-for="(uniqueBrand, index) of uniqueBrands" :key="index" 
-                >
+                <li v-for="(uniqueBrand, index) of uniqueBrands" :key="index">
                     <span class="material-symbols-outlined">arrow_right</span>
-                    <a  @click="SelectBrand(uniqueBrand)" >{{ uniqueBrand }}</a>
+                    <a @click="SelectBrand(uniqueBrand)">{{ uniqueBrand }}</a>
                 </li>
             </ul>
         </div>
+
         <div class="main-container">
-            <div class="tab-container">
-                <ul>
-                    <li>
-                        <span class="material-symbols-outlined" @click="tabChange('button1')"
-                            :class="{ 'tab-change': tabFlag == 'button1' }">
-                            view_cozy</span>
-                    </li>
-                    <li>
-                        <span class="material-symbols-outlined" @click="tabChange('button2')"
-                            :class="{ 'tab-change': tabFlag == 'button2' }">
-                            view_list</span>
-                    </li>
-                    <li>
-                        <label for="products-select"></label>
-                        <select id="products-select">
-                            <option value="new">最新上架</option>
-                            <option value="Price-low-to-high">價格低至高</option>
-                            <option value="Price-high-to-low">價格高至低</option>
-                            <option value="hot">熱銷商品</option>
-                        </select>
-                    </li>
-                </ul>
-            </div>
-            <div class="products-container" 
-            :class="{'products-list-style': tabFlag == 'button2',
-                     'products-cozy-style': tabFlag == 'button1'}"
-                     >
-                <div class="products-card" v-for="filterItems of filterItem" :key="filterItems.id">
-                    <img :src="getImagePath(filterItems.img)" alt="">
-                    <div class="products-content">
-                        <h3>{{ filterItems.productName }}</h3>
-                        <p class="sold">已售出 {{ filterItems.sold }}</p>
-                        <p class="price">NT.{{ filterItems.price }}</p>
+
+            <RouterView :items="item" />
+
+            <div class="container" v-if="$route.path === '/products'">
+
+                <div class="tab-container">
+                    <ul>
+                        <li>
+                            <span class="material-symbols-outlined" @click="tabChange('button1')"
+                                :class="{ 'tab-change': tabFlag == 'button1' }">
+                                view_cozy</span>
+                        </li>
+                        <li>
+                            <span class="material-symbols-outlined" @click="tabChange('button2')"
+                                :class="{ 'tab-change': tabFlag == 'button2' }">
+                                view_list</span>
+                        </li>
+                        <li>
+                            <label for="products-select"></label>
+                            <select id="products-select">
+                                <option value="new">最新上架</option>
+                                <option value="Price-low-to-high">價格低至高</option>
+                                <option value="Price-high-to-low">價格高至低</option>
+                                <option value="hot">熱銷商品</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+                <div class="products-container" :class="{
+                    'products-list-style': tabFlag == 'button2',
+                    'products-cozy-style': tabFlag == 'button1'
+                }">
+                    <div class="products-card" v-for="filterItems of filterItem" :key="filterItems.id">
+                        <RouterLink :to="{ name: 'productsDetails', query: { id: filterItems.id } }">
+                            <img :src="getImagePath(filterItems.img)" alt="">
+                        </RouterLink>
+                        <div class="products-content">
+                            <h3>{{ filterItems.productName }}</h3>
+                            <p class="sold">已售出 {{ filterItems.sold }}</p>
+                            <p class="price">NT.{{ filterItems.price }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>
@@ -279,28 +288,30 @@ onMounted(() => {
             cursor: pointer;
 
         }
-        .aaa{
-        color: #FFF;
-    }
+
+        .aaa {
+            color: #FFF;
+        }
     }
 }
-    .tab-change {
-        color: #FFF;
-        background-color: rgb(54, 54, 88);
-    }
 
-    .products-list-style {
-        .products-card {
-            display: flex;
-        }
-    }
+.tab-change {
+    color: #FFF;
+    background-color: rgb(54, 54, 88);
+}
 
-    .products-cozy-style {
+.products-list-style {
+    .products-card {
         display: flex;
-        flex-wrap: wrap;
-
-        .products-card {
-            width: 30%;
-        }
     }
+}
+
+.products-cozy-style {
+    display: flex;
+    flex-wrap: wrap;
+
+    .products-card {
+        width: 30%;
+    }
+}
 </style>

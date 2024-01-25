@@ -6,17 +6,15 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-    <HeaderBar />
-    <div class="wrap">
+        <HeaderBar />
+        
         <RouterView />
-    </div>
-    <Footer />
+        
+        <Footer />
+
 </template>
 
 
 <style scoped>
-.wrap{
-    margin-top: 165px;
 
-}
 </style>

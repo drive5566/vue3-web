@@ -10,24 +10,24 @@ const clickable = ref(false)
 
 const item = ref([
     {
-        img: 'MAIN-VIB 46S-HS - 複製.jpg',
-        id: 0
+        img: 'MAIN-GRASS RIPPER-1 4oz - 複製.jpg',
+        id: 11
     },
     {
-        img: '750-SPOON 50g - 複製.jpg',
-        id: 1
+        img: 'MAIN-FLAT CAP - 複製.jpg',
+        id: 10
     },
     {
-        img: '750-SPOON 100g - 複製.jpg',
-        id: 2
+        img: 'MAIN-IxI FURIOUS 1.5 - 複製.jpg',
+        id: 9
     },
     {
-        img: '750-SPOON 70g - 複製.jpg',
-        id: 3
+        img: 'MAIN-BIG BACKER FIT VIB-70mm - 複製.jpg',
+        id: 8
     },
     {
-        img: '750-口太速攻 - 複製.jpg',
-        id: 4
+        img: 'MAIN-GM-3721 - 複製.jpg',
+        id: 7
     },
 ]
 )

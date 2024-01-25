@@ -77,6 +77,7 @@ const brands =[
 </template>
 
 <style lang="scss" scoped>
+
 .wrap{
     max-width: 1270px;
     margin: 0 auto;
@@ -96,6 +97,9 @@ const brands =[
     .main-container{
         width: 1000px;
         margin: 0 auto;
+        padding-bottom: 15%;
+
     }
 }
 </style>
+

@@ -53,6 +53,7 @@
         display: flex;
         justify-content: center;
         gap: 20px;
+
         li{
             text-align: center;
             width: 80px;
@@ -61,7 +62,7 @@
             padding: 5px;
             border-radius: 10px;
 
-            &:hover{
+            &:hover {
                     color: #FFF;
                     background-color: rgb(77, 91, 130);
                 }
@@ -70,7 +71,9 @@
         }
     }
 }
-
+a{
+    color: rgb(77, 91, 130);
+}
 .router-link-exact-active{
     z-index: 9;
     color: #FFF;

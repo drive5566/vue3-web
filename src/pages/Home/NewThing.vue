@@ -46,10 +46,16 @@ const title = '最新商品 NEW'
 
         <Title :title="title" />
 
-        <div class="new-think-card" v-for="items of item" :key="items.id">
-            <img :src="getImagePath(items.img)" alt="">
-            <div class="new-think-content">
-                <h3>{{ items.productName }}</h3>
+        <div class="new-thing-card" v-for="items of item" :key="items.id">
+            <div class="newThingImg">
+                <RouterLink :to="{name:'productsDetails',query:{id:items.id}}">
+                    <img :src="getImagePath(items.img)" alt="">
+                </RouterLink>
+            </div>
+            <div class="new-thing-content">
+                <RouterLink :to="{name:'productsDetails',query:{id:items.id}}">
+                    <h3>{{ items.productName }}</h3>
+                </RouterLink>
                 <p class="sold">已售出{{ items.sold }}</p>
                 <p class="price">NT.{{ items.price }}</p>
             </div>
@@ -64,14 +70,17 @@ const title = '最新商品 NEW'
 
 
 
-.new-think-card {
+.new-thing-card {
     margin: 0 auto;
     max-width: 1270px;
     display: flex;
     justify-content: start;
+    gap: 20px;
     padding: 30px;
     border-bottom: 1px solid hsl(0, 0%, 0%,.2);
-
+    a{
+        color: black;
+    }
     h3 {
         font-size: 26px;
     }
@@ -84,11 +93,14 @@ const title = '最新商品 NEW'
         color: red;
         font-size: 18px;
     }
-
-    img {
+    .newThingImg{
         width: 20%;
+        img {
+        max-width: 100%;
         border: 1px solid rgb(0, 0, 0, .2);
         margin-right: 50px;
     }
+    }
+
 }
 </style>

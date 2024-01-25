@@ -14,23 +14,23 @@ const modules = [Autoplay, Pagination, Navigation, A11y]
 const item = ref(
 [
     {
-        img:'20231101091930685.jpg',
-        time:'2023-12-12',
+        img:'20240103093546115.jpg',
+        time:'2024.01.01',
         id:'0'
     },
     {
-        img:'20231109101150960.jpg',
-        time:'2023-12-30',
+        img:'20240103092445839.jpg',
+        time:'2024.01.01',
         id:'1'
     },
     {
-        img:'20231110103843589.jpg',
-        time:'2023-12-30',
+        img:'20240103092926353.jpg',
+        time:'2024.01.01',
         id:'2'
     },
     {
-        img:'20231127094138952.jpg',
-        time:'2023-12-26',
+        img:'20240102103040678.jpg',
+        time:'2024.01.01',
         id:'3'
     }
 ]
@@ -58,7 +58,9 @@ const title = '活動資訊 Activity'
     >
 
       <swiper-slide v-for="items of item" :key="items.id"> 
-        <img :src=" getImagePath(items.img) " alt=""> 
+        <RouterLink :to="{name:'Promotions'}">
+            <img :src=" getImagePath(items.img) " alt=""> 
+        </RouterLink>
         <div class="activity-content">
             <h3 class="activity-title">促銷活動</h3>
             <p class="activity-time">{{ items.time }}</p>

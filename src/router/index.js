@@ -5,7 +5,6 @@ import {createRouter,createWebHistory,createWebHashHistory} from 'vue-router'
 export const createMyRouter = function(){
     const router = createRouter({
         history: createWebHashHistory(import.meta.env.BASE_URL),
-        // import.meta.env.BASE_URL
         routes:[
             {
                 path:'/',
@@ -15,7 +14,15 @@ export const createMyRouter = function(){
             {
                 path:'/products',
                 name:'products',
-                component: () => import('@/pages/products/products.vue')
+                component: () => import('@/pages/products/products.vue'),
+                children:[
+                    {
+                        path:'productsDetails',
+                        name:'productsDetails',
+                        component: () => import('@/pages/products/productsDetails.vue'), 
+        
+                    }, 
+                ]
             },
             {
                 path:'/promotion',
@@ -82,6 +89,7 @@ export const createMyRouter = function(){
                 name:'video',
                 component: () => import('@/pages/video/video.vue')
             },
+
         ]
     })
     // 阻擋
@@ -89,9 +97,10 @@ export const createMyRouter = function(){
     //     console.log('beforEach');
     // })
     // 頁面初始化
-    // router.beforeResolve(() => {
-    //     console.log('beforeResolve');
-    // })
+    router.beforeResolve(() => {
+        // console.log('beforeResolve');
+        window.scrollTo(0,0)
+    })
 
     return router
 }

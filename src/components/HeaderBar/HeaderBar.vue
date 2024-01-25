@@ -53,10 +53,7 @@ import {RouterLink} from 'vue-router'
                         </li>
                     </RouterLink>
 
-                    <li>
-                        <p class="subtitle">FISHING FIELD</p>
-                        <p>釣場介紹</p>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -66,7 +63,7 @@ import {RouterLink} from 'vue-router'
 <style lang="scss" scoped>
 .header-wrap{
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 99;
 }

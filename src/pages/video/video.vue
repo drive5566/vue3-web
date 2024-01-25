@@ -1,6 +1,7 @@
 <script setup>
 import Title from "@/components/Title/Title.vue";
 import { getImagePath } from "@/Mixins/getImagePath.js";
+import {ref} from 'vue'
 
 
 const title = '影片專區 VIDEOS'
@@ -53,17 +54,25 @@ const videoItems = [
 
     },
 ]
+const videFalg = ref('')
+const videoHandler = (src) =>{
+videFalg.value = src
+}
 </script>
 
 
 <template>
     <div class="wrap">
+        <div class="video" v-if="videFalg !=''">
+        <iframe width="1000" height="600" :src="videFalg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
         <Title :title="title"></Title>
 
         <div class="main-container" >
             <ul>
                 <li v-for="videoItem of videoItems" :key="videoItem.id">
-                    <img :src="getImagePath(videoItem.img)" alt="">
+                    <img :src="getImagePath(videoItem.img)" :alt="videoItem.title" 
+                    @click="videoHandler(videoItem.src)">
                     <h3>{{ videoItem.title }}</h3>
                     <p>{{ videoItem.date }}</p>
                 </li>
@@ -71,7 +80,6 @@ const videoItems = [
 
         </div>
 
-        <!-- <iframe width="350" height="215" src="https://www.youtube.com/embed/zI1cyQYdYtc?si=X1pqab-hzkgsEYvv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
     </div>
 </template>
 
@@ -79,6 +87,8 @@ const videoItems = [
 .wrap{
     max-width: 1270px;
     margin: 0 auto;
+    height: auto;
+    padding-bottom: 10px;
     ul{
         display: flex;
         gap: 30px;
@@ -88,17 +98,29 @@ const videoItems = [
         li{
             width: 25%;
             text-align: left ;
+            padding: 10px;
+            overflow: hidden;
+            &:hover img{
+                scale: 120%;
+                transition: all 1s;
+            }
 
             img{
                 max-width: 100%;
-                width: 400px;
+                height: 170px;
+                cursor: pointer;
             }
             h3{
                 font-weight: 600;
                 font-size: 16px;
-                margin: 10px 0;
+                margin: 20px 0 10px 0;
             }
         }
+    }
+    .video{
+        margin:0 auto;
+        width: 800px;
+
     }
 }
 </style>

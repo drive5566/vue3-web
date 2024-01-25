@@ -32,7 +32,10 @@ const props = defineProps(['item','slidesPerView','clickable','navigation'])
       
     >
 
-      <swiper-slide v-for="items in item" :key="items.id"> <img class="swiper-img" :src=" getImagePath(items.img) " alt=""> </swiper-slide> -->
+      <swiper-slide v-for="items in item" :key="items.id"> 
+        <img class="swiper-img"
+         :src=" getImagePath(items.img) " alt=""> 
+      </swiper-slide> -->
         
     </swiper>
   </div>
