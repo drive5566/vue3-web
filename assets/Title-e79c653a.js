@@ -1,0 +1,1 @@
+import{_ as s,f as a,i as o,q as e,y as c,v as l,x as n}from"./index-dc8a66aa.js";const p=t=>(l("data-v-41052a8d"),t=t(),n(),t),i={class:"title-container"},_=p(()=>e("span",null,null,-1)),r={name:"Title",props:["title"],setup(t){return(d,u)=>(a(),o("div",i,[e("h2",null,c(t.title),1),_]))}},m=s(r,[["__scopeId","data-v-41052a8d"]]);export{m as T};
